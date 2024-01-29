@@ -1,6 +1,7 @@
 import { router } from "@/router/Router";
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
+import "./global.module.scss";
 
 const root = document.getElementById("root");
 

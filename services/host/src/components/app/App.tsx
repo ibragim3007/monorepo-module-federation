@@ -4,19 +4,18 @@ import IconSvg from "@/assets/iconsvg.svg";
 import { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
 import s from "./App.module.scss";
+import { AppWrap } from "@packages/shared";
 
 const App = () => {
   const [counter, setCounter] = useState(0);
 
   const inc = () => setCounter(counter + 1);
   return (
-    <div>
+    <AppWrap>
       <div data-testId="AppTestId">
         <img width={100} src={bartPng} />
         <img width={100} src={bartJpg} />
-        <div>
-          <IconSvg stroke="green" width={100} height={100} />
-        </div>
+        <IconSvg stroke="green" width={100} height={100} />
         счетчик:<span className={s.value}> {counter}</span>
         <button className={s.button} onClick={inc}>
           Inc
@@ -28,7 +27,7 @@ const App = () => {
         <Link to={"/shop"}>SHOP</Link>
       </div>
       <Outlet />
-    </div>
+    </AppWrap>
   );
 };
 
